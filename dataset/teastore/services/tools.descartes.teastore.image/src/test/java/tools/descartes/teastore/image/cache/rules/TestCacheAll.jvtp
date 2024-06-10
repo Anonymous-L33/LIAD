@@ -1,0 +1,10 @@
+ tools descartes teastore image cache rules testcacheall   
+ 
+   mock 
+  
+ 
+   before initialize     
+    mockitoannotations openmocks test testrule     
+    cacheall storeimage  uut cacheall      
+    asserttrue uut test mockedimg    
+    asserttrue uut test  services tools descartes teastore image src test tools descartes teastore image cache rules TestCacheAll

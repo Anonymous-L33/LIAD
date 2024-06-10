@@ -1,0 +1,6 @@
+ tools descartes teastore image storage rules storelargeimages predicate storeimage    
+ 
+   override test storeimage t t t getsize   equals imagesizepreset full getsize     
+    
+ 
+  services tools descartes teastore image src main tools descartes teastore image storage rules StoreLargeImages

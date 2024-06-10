@@ -1,0 +1,22 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"WebUI Service"
+		"Image Provider"
+		"Auth Service"
+		"Persistence Service"
+		"Registry"
+	}
+
+	ModuleDescriptions : {
+		"The WebUI Service serves as the front-end of the TeaStore application, utilizing Servlets and JSP files. It manages user interactions, authenticates users through the Auth Service, displays product information, and retrieves images from the Image Provider. It also handles cookie management and provides a status page with the current state of the TeaStore."
+		"The Image Provider is responsible for providing images to the WebUI as base64 encoded strings. It processes requests based on product ID or UI name and image size, and includes an LFU in-memory cache to speed up image delivery. It scales and stores images as needed and provides a standard "not found" image if necessary."
+		"The Auth Service handles user and session authentication. It uses BCrypt to hash passwords and validates sessions using salted and hashed SessionBlob stored in cookies. It ensures the security and integrity of user sessions and prevents session tampering."
+		"The Persistence Service provides access to the data stored in the relational database back-end. It maps relational entities to JSON objects using EclipseLink JPA ORM mapper and offers CRUD operations for persistent entities. It also acts as a caching layer through a second level entity cache."
+		"The Registry tracks the number and location of service instances in the TeaStore application. Service instances register themselves on startup and periodically send heartbeat signals. Missing heartbeats for over 10 seconds mark services as offline. The Registry maintains a single instance to facilitate easy configuration and management of parallel TeaStore instances."
+	}
+

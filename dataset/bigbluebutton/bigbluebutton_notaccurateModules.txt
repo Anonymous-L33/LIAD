@@ -1,0 +1,30 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"HTML5 Client"
+		"HTML5 Server"
+		"MongoDB Database"
+		"BBB Web"
+		"Redis PubSub"
+		"Apps Akka"
+		"FreeSWITCH"
+		"Kurento and WebRTC-SFU"
+		"Presentation Conversion"
+	}
+
+	ModuleDescriptions : {
+		"A single page, responsive web application that uses React.js for rendering user interface and WebRTC for sending/receiving audio and video. It communicates directly with the BigBlueButton server over port 443."
+		"Sits behind nginx and uses Meteor.js in ECMA2015 for client-server communication and MongoDB for maintaining consistent state between BigBlueButton client and server."
+		"Contains information about all meetings on the server and each client connected to a meeting. It ensures each user's client is only aware their respective meeting's state."
+		"A Java-based application written in Scala which implements the BigBlueButton API and holds a copy of the meeting state."
+		"Provides a communication channel between different applications running on the BigBlueButton server."
+		"The main application that integrates different applications to provide real-time collaboration in the meeting."
+		"Offers capability for handling audio in voice conferencing."
+		"Responsible for streaming of webcams, listen-only audio, and screensharing, and for managing the media streams and negotiations."
+		"This process converts uploaded presentations into a format that can be displayed inside the client."
+	}
+

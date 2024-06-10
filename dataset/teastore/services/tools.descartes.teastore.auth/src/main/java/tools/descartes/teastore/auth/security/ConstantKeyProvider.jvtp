@@ -1,0 +1,7 @@
+ tools descartes teastore auth security constantkeyprovider ikeyprovider   
+ 
+    
+   override getkey sessionblob blob thebestsecretkey   
+    
+ 
+  services tools descartes teastore auth src main tools descartes teastore auth security ConstantKeyProvider
