@@ -1,46 +1,48 @@
-# Mapping Generator
+# GIAR Tool and Dataset
 
-## Project Description
-This Java application is designed to generate mappings between files and modules by reading specific data files within a project directory. It outputs a JSON file detailing these mappings, which can be used for further processing by GIAR or systems.
+## Introduction
 
-## Features
-- Generates mappings between files and modules efficiently.
-- Outputs the mappings in a JSON format, facilitating integration with other applications.
+This repository contains the GIAR (GPT-Integrated Interpretable Architecture Recovery) tool and associated datasets for generating interpretable software architecture recovery results. The dataset includes 5 different projects, each equipped with ground truth architecture, architecture document, and module information extracted using GPT.
 
-## Getting Started
+## Disclaimer
 
-### Prerequisites
-- Java 8 or higher is required to run this application.
-- Maven is needed for building and packaging the application.
+This repository does not provide the steps involving GPT for generating module information based on architecture documents nor the steps for generating interpretable module dependencies. It focuses only on the application of the GIAR tool using pre-existing data.
 
-### Setup and Installation
-1. Clone the repository to your local machine:
+## Projects Included
+
+This dataset consists of source code from the following versions of projects, each containing ground truth architecture documents and GPT-extracted module information files (`mediastore_notaccurateModules.txt` and `mediastore_accurateModules.txt`):
+
+- **MediaStore** - [View Commit](https://github.com/ArDoCo/MediaStore3/commit/94c398fa02b3d6b8d71517522a7206d37ed3a9af)
+- **TeaStore** - [View Commit](https://github.com/ArDoCo/TeaStore/commit/bdc49020a55cfa97eaabbb25744fefbc2697defa)
+- **TEAMMATES** - [View Commit](https://github.com/ArDoCo/teammates/commit/b24519a2af9e17b2bc9c025e87e4cf60009c425d)
+- **BigBlueButton** - [View Commit](https://github.com/ArDoCo/bigbluebutton/commit/8fa2507d6c3865a9850004fd6fefd09738e68406)
+- **JabRef** - [View Commit](https://github.com/ArDoCo/jabref/commit/6269698cae437610ec79c38e6dd611eef7e88afe)
+
+## Usage
+
+To use the GIAR tool to generate interpretable architecture recovery results, please follow these steps:
+
+1. **Download the Tool**: Download the `run_GIAR` executable from this GitHub repository to your local machine.
+
+2. **Run the Tool**: Open a terminal, navigate to the directory containing `run_GIAR`, and execute the following command:
+
    ```bash
-   git clone [Repository URL]
-   cd [Project Directory]
-
-2. Build the project using Maven to create an executable JAR file: 
-
-   ```bash
-   mvn clean package
+   ./run_GIAR /path/to/project -s /path/to/stopwords.txt -g /path/to/ground_truth.json -m /path/to/mediastore_notaccurateModules.txt
    ```
 
-3. ### Running the Application
+   - **`/path/to/project`**: Path to the project directory to analyze.
+   - **`-s /path/to/stopwords.txt`**: Path to the stopwords file to use during analysis.
+   - **`-g /path/to/ground_truth.json`**: Path to the ground truth JSON file for validation.
+   - **`-m /path/to/mediastore_notaccurateModules.txt`**: Path to the file containing module information extracted by GPT.
 
-   Run the application using the command below, replacing `[jar-file-name]` with the name of your built JAR file, and providing appropriate arguments for `<project>` and `<projectFolder>`:
+   Replace the paths with the actual file paths to your project data.
 
-   ```bash
-   java -jar Mapping-jar-with-dependencies.jar <project> <projectFolder> <The file name that contains the module information>
-   ```
+### Example Command
 
-​	Command Line Arguments:
+```bash
+./run_GIAR project/mediastore -s ./ext_tools/stopwords.txt -g project/mediastore/mediastore_gt.json -m project/mediastore/mediastore_notaccurateModules.txt
+```
 
-​		`project`: The name of the project for which file-module mappings are being generated.
+## Contribution
 
-​		`projectFolder`: The path to the project directory where the necessary data files are located.
-
-​		`module`: The name of the file for which module information are recorded.
-
-## Output
-
-The application will create a `file-module_mapping.json` file in the specified project folder. This file contains the mappings between the files and their respective modules.
+Feel free to submit pull requests or open issues to suggest improvements or discuss potential changes.
