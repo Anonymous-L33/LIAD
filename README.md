@@ -10,13 +10,13 @@ This repository does not provide the steps involving GPT for generating module i
 
 ## Projects Included
 
-This dataset consists of source code from the following versions of projects, each containing ground truth architecture documents and GPT-extracted module information files (`mediastore_notaccurateModules.txt` and `mediastore_accurateModules.txt`):
+This dataset consists of source code from the following versions of projects, each containing ground truth (`project_gt.json`), architecture documents (`document.txt`) and GPT-extracted module information files (`project_notaccurateModules.txt` and project_accurateModules.txt`):
 
-- **MediaStore** - [View Commit](https://github.com/ArDoCo/MediaStore3/commit/94c398fa02b3d6b8d71517522a7206d37ed3a9af)
-- **TeaStore** - [View Commit](https://github.com/ArDoCo/TeaStore/commit/bdc49020a55cfa97eaabbb25744fefbc2697defa)
-- **TEAMMATES** - [View Commit](https://github.com/ArDoCo/teammates/commit/b24519a2af9e17b2bc9c025e87e4cf60009c425d)
-- **BigBlueButton** - [View Commit](https://github.com/ArDoCo/bigbluebutton/commit/8fa2507d6c3865a9850004fd6fefd09738e68406)
-- **JabRef** - [View Commit](https://github.com/ArDoCo/jabref/commit/6269698cae437610ec79c38e6dd611eef7e88afe)
+- **MediaStore** - [View Version](https://github.com/ArDoCo/MediaStore3/commit/94c398fa02b3d6b8d71517522a7206d37ed3a9af)
+- **TeaStore** - [View Version](https://github.com/ArDoCo/TeaStore/commit/bdc49020a55cfa97eaabbb25744fefbc2697defa)
+- **TEAMMATES** - [View Version](https://github.com/ArDoCo/teammates/commit/b24519a2af9e17b2bc9c025e87e4cf60009c425d)
+- **BigBlueButton** - [View Version](https://github.com/ArDoCo/bigbluebutton/commit/8fa2507d6c3865a9850004fd6fefd09738e68406)
+- **JabRef** - [View Version](https://github.com/ArDoCo/jabref/commit/6269698cae437610ec79c38e6dd611eef7e88afe)
 
 ## Usage
 
@@ -31,7 +31,7 @@ To use the GIAR tool to generate interpretable architecture recovery results, pl
    ```
 
    - **`/path/to/project`**: Path to the project directory to analyze.
-   - **`-s /path/to/stopwords.txt`**: Path to the stopwords file to use during analysis.
+   - **`-s /path/to/stopwords.txt`**: Path to the stopwords file to use during analysis, provided by `ext_tools/stopwords.txt`.
    - **`-g /path/to/ground_truth.json`**: Path to the ground truth JSON file for validation.
    - **`-m /path/to/mediastore_notaccurateModules.txt`**: Path to the file containing module information extracted by GPT.
 
@@ -40,7 +40,7 @@ To use the GIAR tool to generate interpretable architecture recovery results, pl
 ### Example Command
 
 ```bash
-./run_GIAR project/mediastore -s ./ext_tools/stopwords.txt -g project/mediastore/mediastore_gt.json -m project/mediastore/mediastore_notaccurateModules.txt
+./run_GIAR dataset/mediastore -s ./ext_tools/stopwords.txt -g dataset/mediastore/mediastore_gt.json -m dataset/mediastore/mediastore_notaccurateModules.txt
 ```
 
 ## Contribution
