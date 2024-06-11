@@ -140,6 +140,10 @@
                 },
                 {
                     "@type": "item",
+                    "name": "Implementation/mediastore.basic/src/edu/kit/ipd/sdq/mediastore/basic/config/EJB.java"
+                },
+                {
+                    "@type": "item",
                     "name": "Implementation/mediastore.basic/src/edu/kit/ipd/sdq/mediastore/basic/interfaces/IDownloadAudioWatermarkingRemote.java"
                 },
                 {
@@ -163,6 +167,10 @@
                 {
                     "@type": "item",
                     "name": "Implementation/mediastore.basic/src/edu/kit/ipd/sdq/mediastore/basic/interfaces/IUserManagementRemote.java"
+                },
+                {
+                    "@type": "item",
+                    "name": "Implementation/mediastore.basic/src/edu/kit/ipd/sdq/mediastore/basic/BaseEJB.java"
                 },
                 {
                     "@type": "item",
@@ -193,10 +201,6 @@
                 {
                     "@type": "item",
                     "name": "Implementation/mediastore.ejb.audiowatermarking/src/edu/kit/ipd/sdq/mediastore/ejb/audiowatermarking/AudioWatermarkingImpl.java"
-                },
-                {
-                    "@type": "item",
-                    "name": "Implementation/mediastore.basic/src/edu/kit/ipd/sdq/mediastore/basic/BaseEJB.java"
                 },
                 {
                     "@type": "item",
@@ -331,10 +335,6 @@
                 {
                     "@type": "item",
                     "name": "Implementation/mediastore.basic/src/edu/kit/ipd/sdq/mediastore/basic/data/CurrentUser.java"
-                },
-                {
-                    "@type": "item",
-                    "name": "Implementation/mediastore.basic/src/edu/kit/ipd/sdq/mediastore/basic/config/EJB.java"
                 },
                 {
                     "@type": "item",
