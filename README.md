@@ -1,4 +1,4 @@
-# GIAR Tool and Dataset
+# LIAD Tool and Dataset
 
 ## Introduction
 
