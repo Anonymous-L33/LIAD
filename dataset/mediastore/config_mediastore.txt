@@ -1,0 +1,23 @@
+	ModuleNames : {
+		"DB"
+		"Facade"
+		"MediaAccess"
+		"MediaManagement"
+		"Packaging"
+		"Reencoding"
+		"TagWatermarking"
+		"UserDBAdapter"
+		"UserManagement"
+	}
+
+	ModuleDescriptions : {
+		"The Database component represents an actual database (e.g., MySQL). It stores user information and meta-data of audio files such as the name and the genre. After the user calls the page to list all available audio files, AudioAccess creates a query that is sent to the Database component. The Database component then executes the actual query for files. All salted hashes of passwords are also stored in the Database component."
+		"One of the main components of Media Store is a server-side web front end, namely the Facade component, which delivers websites to the users and provides session management. To this end, the Facade component delivers the corresponding registration and log-in pages to users. In addition, users can browse, download, and upload audio files using the Facade component."
+		"When a user uploads an audio file, the MediaAccess component stores it at the predefined location. The MediaAccess component encapsulates database access for meta-data of audio files. Furthermore, it fetches a list of all available audio files. When a user requests files to download, the MediaAccess component fetches the associated meta-data from the Database."
+		"Application business logic is provided by a central business logic component, called the MediaManagement component. The MediaManagement component coordinates the communication of other components. Furthermore, it fetches audio files from a specific location (e.g., a dedicated file server or a local disk) when processing download requests. Afterward, the MediaManagement component forwards these audio files from the TagWatermarking component to the user."
+		"To allow users to download several files at a time, we provide the Packaging component, which archives multiple audio files into a single compressed file."
+		"The ReEncoder component converts the bit rates of audio files. However, a download can cause re-encoding of the audio file."
+		"The re-encoded files are then digitally and individually watermarked by the TagWatermarking component. Afterward, the MediaManagement component forwards these audio files from the TagWatermarking component to the user."
+		"The UserDBAdapter component queries the database. By contrast, the UserDBAdapter component provides all functions required in order to encapsulate database access for the user data. The UserDBAdapter component creates a query based on the user's request."
+		"The UserManagement component answers the requests for registration and authentication. When a user logs into the system, Media Store does not store the password in plain text, but rather the UserManagement component implements further functions to hash and salt the passwords."
+	}

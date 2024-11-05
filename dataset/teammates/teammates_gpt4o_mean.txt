@@ -1,0 +1,26 @@
+// *INMAP CONFIG FILE*
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"Common,module type:Utility,"
+		"Storage,module type:Data Access,"
+		"Logic,module type:Business Logic,"
+		"Web API,module type:Presentation,"
+		"Test Driver,module type:Testing,"
+		"E2E (End-to-End),module type:Testing,"
+		"Client,module type:Administrative,"
+	}
+
+	ModuleDescriptions : {
+		"Contains common utilities used across TEAMMATES, including utility classes, custom exceptions, and data transfer objects."
+		"Responsible for storing and retrieving data in a database, handling transactions and consistency."
+		"Contains the core business logic of TEAMMATES, including classes that perform operations on data retrieved from the Storage component."
+		"Exposes the application's functionality through REST APIs, allowing clients to interact with the application."
+		"Automates the testing of TEAMMATES by providing infrastructure and helpers for running tests."
+		"Responsible for End-to-End testing and Load & Performance testing of the application."
+		"Contains scripts that can connect directly to the application back-end for administrative purposes, such as data migration and statistics calculation."
+	}
+

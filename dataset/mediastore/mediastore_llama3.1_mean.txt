@@ -1,0 +1,34 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"Facade"
+		"MediaManagement"
+		"UserManagement"
+		"UserDBAdapter"
+		"TagWatermarking"
+		"Packaging"
+		"ReEncoder"
+		"Database"
+		"AudioAccess"
+		"MediaAccess"
+		"DataStorage"
+	}
+
+	ModuleDescriptions : {
+		"The Facade component is the server-side web front end responsible for delivering websites to users, managing sessions, handling user registrations, log-ins, and allowing browsing, downloading, and uploading of audio files."
+		"The MediaManagement component provides the central business logic, coordinates communication among other components, and fetches audio files from a specific location for processing download requests."
+		"The UserManagement component handles user registration and authentication, implements password hashing and salting functions, and processes user data queries."
+		"The UserDBAdapter component encapsulates database access for user data, creating and sending queries to the Database component based on user requests."
+		"The TagWatermarking component digitally and individually watermarks audio files to uniquely connect them to user IDs, reducing the risks of copyright infringements."
+		"The Packaging component archives multiple audio files into a single compressed file to allow users to download several files at a time."
+		"The ReEncoder component converts the bit rates of audio files, potentially reducing file sizes for efficient storage and transfer."
+		"The Database component stores user information, audio file meta-data (such as name and genre), and salted password hashes."
+		"The AudioAccess component creates and sends queries to the Database component to list all available audio files."
+		"The MediaAccess component encapsulates database access for audio file meta-data, fetches lists of available audio files, and retrieves files from DataStorage based on user requests and corresponding meta-data."
+		"The DataStorage component is responsible for storing all audio files at a specific location, decoupled from the database. It handles file retrievals and uploads without alteration, while downloads may involve re-encoding."
+	}
+

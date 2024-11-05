@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository contains the GIAR (GPT-Integrated Interpretable Architecture Recovery) tool and associated datasets for generating interpretable software architecture recovery results. The dataset includes 5 different projects, each equipped with ground truth architecture, architecture document, and module information extracted using GPT.
+This repository contains the LIAD (LLM-Integrated Architectural Drift Detection) tool and associated datasets for detecting architectural drift between outdated documentation and code. The dataset includes 5 different projects, each equipped with ground truth architecture, architecture document, and module information extracted using Large Language models (GPT/Llama).
 
 ## Projects Included
 
@@ -23,33 +23,33 @@ To use the GIAR tool to generate interpretable architecture recovery results, pl
 2. **Run the Tool**: Open a terminal, navigate to the directory containing `run_GIAR`, and execute the following command:
 
    ```bash
-   ./run_GIAR /path/to/project -s /path/to/stopwords.txt -g /path/to/project_ground_truth.json -m /path/to/project_incompleteModules.txt
+   ./run_GIAR /path/to/project -s /path/to/stopwords.txt -g /path/to/project_ground_truth.json -m /path/to/project_extractedModules.txt
    ```
 
    - **`/path/to/project`**: Path to the project directory to analyze.
    - **`-s /path/to/stopwords.txt`**: Path to the stopwords file to use during analysis, provided by `ext_tools/stopwords.txt`.
    - **`-g /path/to/project_ground_truth.json`**: Path to the ground truth JSON file for validation.
-   - **`-m /path/to/project_incompleteModules.txt`**: Path to the file containing module information extracted by GPT.
+   - **`-m /path/to/project_extractedModules.txt`**: Path to the file containing module information extracted by Large Language model (GPT/Llama).
 
    Replace the paths with the actual file paths to your project data.
 
 ### Example Command
 
 ```bash
-./run_GIAR dataset/mediastore -s ./ext_tools/stopwords.txt -g dataset/mediastore/mediastore_gt.json -m dataset/mediastore/mediastore_incompleteModules.txt
+./run_LIAD dataset/teammates/teammates -s stopwords/stopwords.txt -g dataset/teammates/teammates_gt.json -m dataset/teammates/teammates_gpt4o_mean.txt
 ```
 
 ## Output Results
 
-After running the tool, a `results` folder will be generated containing the following:
+After running the tool, a `results` and a a `csv_result` folder will be generated containing the following:
 
-- **Metrics**: Evaluation metrics like MojoFM, A2A, and ARI are provided in `metrics_our_to_GT.json`.
-- **Comparison Visualization**: Visual comparison between the recovered architecture and the ground truth is provided in `comparing_with_gt_project.png` .
-- **JSON Results**: Detailed architecture recovery result in JSON format is provided in `cluster_result.json`.
+- **Metrics**: Evaluation metrics for architecture recovery like MojoFM, A2A, and ARI are provided in `results/metrics_our_to_GT.json`.
+- **JSON Results**: Detailed architecture recovery result in JSON format is provided in `results/cluster_result.json`.
+- **Evaluation Summary**: Evaluation metrics summary from multiple runs of architecture recovery and architecture drift detection in different drift degrees, metrics summary for architecture recovery is provided in `csv_result/{project}_combination_recovery_results.csv`, metrics summary for architectural drift is provided in `csv_result/{project}_combination_inconsistency_results.csv`.
 
 ## Compatibility
 
-Currently, the `run_GIAR` executable is only compatible with Unix-based operating systems, such as macOS and Linux. We are actively working to provide versions for Windows and other operating systems.
+Currently, the `run_LIAD` executable is only compatible with Unix-based operating systems, such as macOS and Linux. We are actively working to provide versions for Windows and other operating systems.
 
 ## Disclaimer
 

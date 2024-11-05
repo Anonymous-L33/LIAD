@@ -1,0 +1,17 @@
+	ModuleNames : {
+		"Auth"
+		"ImageProvider"
+		"Persistence"
+		"Recommender"
+		"Registry"
+		"WebUI"
+	}
+
+	ModuleDescriptions : {
+		"Users are authenticated by the Auth service. The Auth service handles user and session authentication."
+		"The WebUI service retrieves images from the Image Provider. Images (with few exceptions) are not provides by the WebUi, but are retrieved from the Image Provider service instead. The Image Provider delivers images to the WebUI as base64 encoded strings to embed them in the final HTML. It matches the provided product ID or UI name (the filename for images not representing a product and therefore without product ID) and the image size to a unique image identifier. If the product ID or UI name is not available to the Image Provider, a standard "not found" image will be delivered in the correct size."
+		"Data is retrieved from the PersistenceProvider and product recommendations from the Recommender service. The Persistence service provides access to the data persisted in the relational database back-end. It maps the relational entities to the JSON entity objects passed between services using the EclipseLink JPA ORM mapper. It features endpoints for general CRUD-Operations (Create, Read, Update, Delete) for the persistent entities. The persistence provider uses a second level entity cache provided by the JPA implementation. As such, it also acts as a caching layer."
+		"Data is retrieved from the PersistenceProvider and product recommendations from the Recommender service. The Recommender is used to generate individual product recommendations for each user. It is trained using all existing orders."
+		"The TeaStore consists of 5 replicatable services and a single Registry instance. The Registry provides information about how many service instances are online for each service and where they are located. Service instances register themselves at the registry on startup. Every running instance of the TeaStore uses one single registry. By limiting it to a single registry instance, it enables easy configuration of multiple parallel TeaStores with minimal configuration overhead."
+		"The WebUI service retrieves images from the Image Provider. The WebUI provides the TeaStore front-end using Servlets in combination with JSP files. It contains logic to save and retireve values from cookies. Images (with few exceptions) are not provides by the WebUi, but are retrieved from the Image Provider service instead. The UI provides a status page at link indicating the current state of the TeaStore. The Image Provider delivers images to the WebUI as base64 encoded strings to embed them in the final HTML."
+	}

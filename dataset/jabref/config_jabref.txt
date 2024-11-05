@@ -1,0 +1,15 @@
+	ModuleNames : {
+		"cli"
+		"gui"
+		"logic"
+		"model"
+		"preferences"
+	}
+
+	ModuleDescriptions : {
+		"There are additional utility packages for preferences and the cli. The cli package bundles classes that are responsible for JabRef’s command line interface."
+		"We have been successfully transitioning from a spaghetti to a more structured architecture with the model in the center, and the logic as an intermediate layer towards the gui which is the outer shell. We have JUnit tests to detect violations of the most crucial dependencies (between logic, model, and gui), and the build will fail automatically in these cases. The logic is responsible for reading/writing/importing/exporting and manipulating the model, and it is structured often as an API the gui can call and use. Only the gui knows the user and his preferences and can interact with him to help him solve tasks."
+		"We have been successfully transitioning from a spaghetti to a more structured architecture with the model in the center, and the logic as an intermediate layer towards the gui which is the outer shell. We have JUnit tests to detect violations of the most crucial dependencies (between logic, model, and gui), and the build will fail automatically in these cases. The logic is responsible for reading/writing/importing/exporting and manipulating the model, and it is structured often as an API the gui can call and use. The model should have no dependencies to other classes of JabRef and the logic should only depend on model classes."
+		"We have been successfully transitioning from a spaghetti to a more structured architecture with the model in the center, and the logic as an intermediate layer towards the gui which is the outer shell. We have JUnit tests to detect violations of the most crucial dependencies (between logic, model, and gui), and the build will fail automatically in these cases. The model represents the most important data structures (BibDatases, BibEntries, Events, and related aspects) and has only a little bit of logic attached. The logic is responsible for reading/writing/importing/exporting and manipulating the model, and it is structured often as an API the gui can call and use. The model should have no dependencies to other classes of JabRef and the logic should only depend on model classes. We use an event bus to publish events from the model to the other layers."
+		"There are additional utility packages for preferences and the cli. The preferences represents all information customizable by a user for her personal needs."
+	}

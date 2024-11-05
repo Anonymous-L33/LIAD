@@ -1,0 +1,24 @@
+// *INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"WebUI"
+		"Image Provider"
+		"Auth Service"
+		"Persistence Provider"
+		"Recommender"
+		"Registry"
+	}
+
+	ModuleDescriptions : {
+		"Provides the TeaStore front-end using Servlets in combination with JSP files, handles user interactions, saves and retrieves values from cookies, and displays a status page showing the current state of the TeaStore."
+		"Delivers images to the WebUI as base64 encoded strings, matches product IDs or UI names to unique image identifiers, and caches images using an in-memory cache with Least Frequently Used (LFU) replacement strategy."
+		"Handles user and session authentication, hashes passwords using BCrypt, and validates sessions by salting and hashing the SessionBlob using SHA512."
+		"Provides access to data persisted in a relational database back-end, maps relational entities to JSON entity objects using EclipseLink JPA ORM mapper, and features endpoints for CRUD operations."
+		"Generates individual product recommendations for each user based on their shopping cart, previous orders, and item ratings, using algorithms such as Slope One and nearest-neighbor approach."
+		"Provides information about the number of service instances online for each service and their locations, allows services to register themselves and send heartbeat signals periodically."
+	}
+

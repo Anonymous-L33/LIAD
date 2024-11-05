@@ -1,0 +1,44 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"HTML5 Client"
+		"HTML5 Server"
+		"MongoDB Database"
+		"Redis PubSub"
+		"BBB Web"
+		"Apps Akka"
+		"FSESL Akka"
+		"FreeSWITCH"
+		"Kurento Media Server (KMS)"
+		"WebRTC-SFU"
+		"Redis DB"
+		"Greenlight"
+		"MeetingActor"
+		"Presentation Conversion Flow"
+		"SVG Conversion Flow"
+		"Internal Network Connections"
+	}
+
+	ModuleDescriptions : {
+		"A single-page, responsive web application built using React.js for rendering the user interface, WebRTC for sending/receiving audio and video, and connecting directly to the BigBlueButton server over port 443 (SSL)."
+		"Built upon Meteor.js in ECMA2015 for communication between client and server, and MongoDB for keeping the state of each BigBlueButton client consistent with the BigBlueButton server."
+		"Contains information about all meetings on the server, and each client connected to a meeting, including user's public and private chat messages sent and received."
+		"Provides a communication channel between different applications running on the BigBlueButton server."
+		"A Java-based application written in Scala that implements the BigBlueButton API and holds a copy of the meeting state."
+		"The main application that pulls together the different applications to provide real-time collaboration in the meeting, including user list, chat, whiteboard, and presentations."
+		"A component that integrates with FreeSWITCH for voice conferencing capability."
+		"Provides voice conferencing capability in BigBlueButton, allowing users to join through headsets or phones."
+		"A media server that implements both SFU and MCU models for streaming webcams, listen-only audio, and screensharing."
+		"Acts as the media controller handling negotiations and managing media streams."
+		"Stores events from meetings when they are recorded, which are then processed by the Recording Processor along with raw files (PDF, WAV, FLV)."
+		"BigBlueButton's own front-end portal that integrates with LMS systems like Moodle."
+		"Part of Apps Akka, responsible for storing information about meetings and processing messages for a meeting."
+		"A process that converts uploaded presentations into formats suitable for display inside the client, including PDF and SVG conversion using LibreOffice and bbb-web."
+		"A specific part of the presentation conversion flow that handles SVG conversion with fallback options for rasterized images."
+		"Represents the internal connections between various BigBlueButton components via sockets."
+	}
+

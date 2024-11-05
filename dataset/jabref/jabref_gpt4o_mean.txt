@@ -1,0 +1,24 @@
+// *INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"Model"
+		"Logic"
+		"GUI (Graphical User Interface)"
+		"Utility Packagesmodule type:Preferences"
+		"Utility Packagesmodule type:CLI (Command Line Interface)"
+		"Event Bus"
+	}
+
+	ModuleDescriptions : {
+		"Represents the most important data structures (BibDatabases, BibEntries, Events, and related aspects) with only a little bit of logic attached."
+		"Responsible for reading/writing/importing/exporting and manipulating the model, structured as an API that the GUI can call and use."
+		"Knows the user and their preferences, interacts with the user to help them solve tasks, and is the outer shell of the application."
+		"Represents all information customizable by a user for their personal needs."
+		"Bundles classes responsible for JabRef's command line interface."
+		"Publishes events from the model to other layers, allowing the architecture to react upon changes within the core in the outer layers. Note that I've clustered similar functional representations together (e.g., Utility Packages) and avoided repetitions. Let me know if you'd like me to clarify or expand on any of these modules!"
+	}
+

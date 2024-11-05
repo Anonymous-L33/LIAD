@@ -1,0 +1,26 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"WebUI"
+		"Image Provider"
+		"Auth Service"
+		"PersistenceProvider"
+		"Recommender Service"
+		"Registry"
+		"TeaStore"
+	}
+
+	ModuleDescriptions : {
+		"The WebUI service serves as the front-end for the TeaStore, providing web interfaces using Servlets and JSP files. It retrieves images from the Image Provider, manages user authentication via the Auth service, and interacts with the PersistenceProvider for data. It includes functionality for managing cookies and provides a status page indicating the current state of services."
+		"The Image Provider handles image delivery for the WebUI, retrieving images based on product ID or UI name and size. It uses an in-memory cache with LFU (Least Frequently Used) replacement strategy to speed up delivery. If an image is not in cache, it is loaded from physical storage with resizing as necessary."
+		"The Auth service is responsible for user and session authentication. It hashes passwords using BCrypt and validates sessions using salted and hashed SessionBlobs stored in cookies. The service checks the integrity of sessions by re-salting and verifying the hash to detect tampering."
+		"The Persistence service provides access to the relational database back-end, mapping relational entities to JSON objects with EclipseLink JPA ORM. It supports CRUD operations (Create, Read, Update, Delete) and includes a second level cache as part of its JPA implementation, enhancing its role as a caching layer."
+		"The Recommender generates personalized product recommendations based on user behavior. It uses historical order data to train algorithms for item-based collaborative filtering (Slope One) and order-based nearest-neighbor methods. The service supports both CPU-intensive real-time calculations and memory-intensive precomputed matrices."
+		"The Registry keeps track of all active service instances, monitoring their statuses and locations. Services must register and periodically send heartbeat signals to remain listed as online. Missing heartbeats beyond a set duration results in the service being marked offline until re-registered."
+		"The TeaStore is the overarching test application providing a platform to evaluate and test the integrated services such as WebUI, Image Provider, Auth, PersistenceProvider, Recommender, and Registry. It allows for easy configuration and deployment of multiple parallel instances through a single registry."
+	}
+

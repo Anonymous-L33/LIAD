@@ -1,0 +1,28 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"Model"
+		"Logic"
+		"GUI"
+		"Preferences"
+		"CLI"
+		"Event Bus"
+		"Utility Packages"
+		"Testing"
+	}
+
+	ModuleDescriptions : {
+		"Represents the most important data structures such as BibDatases, BibEntries, Events, and related aspects. It has minimal logic attached and should have no dependencies on other classes of JabRef."
+		"Handles reading, writing, importing, exporting, and manipulating the model. It functions as an API that the GUI can call and use, and should only depend on model classes."
+		"Acts as the outer shell that interacts with the user and manages user preferences. It helps users solve tasks by utilizing the logic and model."
+		"Contains all information customizable by a user for their personal needs. This module manages user-specific settings within the application."
+		"Bundles classes responsible for JabRef’s command line interface, allowing users to interact with the application via command line commands."
+		"Publishes events from the model to other layers, allowing the architecture to remain intact while still responding to changes within the core in the outer layers."
+		"Provides additional utilities such as preferences management and CLI functionality essential for various non-core tasks within the application."
+		"Comprises JUnit tests aimed at detecting and preventing violations of crucial dependencies between the logic, model, and GUI. The build will fail automatically if such violations are detected."
+	}
+

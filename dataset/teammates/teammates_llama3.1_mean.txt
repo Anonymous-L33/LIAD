@@ -1,0 +1,38 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"UI Component"
+		"UI Server"
+		"Logic Component"
+		"Storage Component"
+		"Common Component"
+		"Test Component"
+		"E2E Component"
+		"Client Component"
+		"Automated Request Handling"
+		"Access Control"
+		"Storage API"
+		"Data Transfer"
+		"Transaction and Cascade Management"
+	}
+
+	ModuleDescriptions : {
+		"The front-end of the application built using the Angular framework. It consists of HTML, SCSS, and TypeScript files, which, after processing, produce HTML, CSS, and JavaScript files for the web browser. It allows client-side interactions like sorting and input validation and handles asynchronous data requests via AJAX."
+		"The back-end entry point for the application, designed as a REST-ful controller. It handles initial page requests and subsequent AJAX requests by forwarding them to WebPageServlet and WebApiServlet, which in turn use ActionFactory to generate and execute specific Action objects."
+		"Manages the business logic of the application, including entity relationship management, input sanitization, transaction management, and access control. It also connects to external APIs for tasks like emailing and task queuing. Logic API classes like Logic, GateKeeper, EmailGenerator, EmailSender, and TaskQueuer facilitate these functions."
+		"Performs CRUD operations on data entities using the GAE Datastore and handles data validation before these operations. It abstracts datastore complexities from the Logic component and ensures data persistence. This component does not handle cascade operations."
+		"Contains utility classes, custom exceptions, and lightweight data transfer object (DTO) classes used across the application. These DTOs facilitate structured data transfers among components."
+		"Automates regression testing using frameworks like TestNG for Java testing and Jest for JavaScript unit testing. It includes simulated web server testing using HttpUnit and E2E testing with Selenium. Test cases are organized into subpackages corresponding to different application components."
+		"Designed for end-to-end (E2E) and load & performance (L&P) testing. It interacts with the application either through web browsers or REST API calls, and contains helpers, page object abstractions, and test cases for holistic application testing."
+		"Includes scripts and utilities for direct back-end interactions for administrative tasks like data migration and statistics calculation. It bypasses the web browser and connects directly to the application's backend."
+		"Manages GAE server-generated requests like cron jobs and task queue workers. These requests can be configured to perform specific actions automatically or be manually invoked for testing purposes."
+		"Provides mechanisms for origin check, authentication, and authorization to secure the Web API. Special keys (csrf and backdoor keys) can bypass these checks for testing."
+		"Interfaces the Logic component with the storage layer, providing methods for CRUD operations, handling exceptions, and ensuring data validation and consistency in the GAE environment."
+		"Transfers data among application components through DTOs, ensuring data structure flexibility and ease of access. These DTOs are part of the Common component."
+		"Manages transactional operations and cascade policies within the application, ensuring atomic transactions and maintaining referential integrity between entities during create/update/delete operations."
+	}
+

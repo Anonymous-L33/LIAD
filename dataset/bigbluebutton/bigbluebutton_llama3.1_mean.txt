@@ -1,0 +1,42 @@
+// *** INMAP CONFIG FILE ***
+
+// ------------------------------
+// Program Specific Settings
+// ------------------------------
+
+	ModuleNames : {
+		"HTML5 Client"
+		"HTML5 Server"
+		"HTML5 Scalability"
+		"BBB Web"
+		"BigBlueButton API"
+		"Redis PubSub"
+		"Redis DB"
+		"Apps Akka"
+		"FSESL Akka"
+		"FreeSWITCH"
+		"Kurento and WebRTC-SFU"
+		"Voice Conference"
+		"Presentation Upload"
+		"Presentation Conversion Flow"
+		"Internal Network Connections"
+	}
+
+	ModuleDescriptions : {
+		"** A single page, responsive web application using React.js for UI rendering and WebRTC for audio/video communication. It connects directly with the BigBlueButton server over SSL, and communicates with HTML5 server through nginx."
+		"** Built on Meteor.js for client-server communication and MongoDB for maintaining state consistency. This server handles client connections, synchronizes meeting states, and manages data subscriptions/publishing."
+		"** Implements multiple Node.js processes (frontend and backend) for handling client messages and browser sessions, improving scalability by utilizing multiple CPU cores."
+		"** Java-based application written in Scala implementing BigBlueButton API. Manages meeting state and provides endpoints for third-party integration."
+		"** Offers integration endpoints for third-party applications like Moodle, Canvas, and others. Central access point for all BigBlueButton functionalities through different portals."
+		"** Provides a communication channel between different applications on the BigBlueButton server, facilitating real-time data exchange."
+		"** Stores all events recorded during meetings. Works with the Recording Processor to manage recorded events and raw files post-meeting."
+		"** Core application for real-time collaboration handling user lists, chat, whiteboard, and presentations. Manages meeting-specific business logic through MeetingActor."
+		"** Manages integration with FreeSWITCH, allowing support for various voice conference systems through Redis PubSub messaging."
+		"** Provides audio conferencing capabilities allowing users to join via headset or phone. Utilizes WebRTC for high-quality audio with low latency."
+		"** Kurento Media Server handles streaming webcams, audio, and screensharing. The WebRTC-SFU manages media stream negotiations and controls."
+		"** Enables users to join voice conferences via BigBlueButton HTML5 client or phone, offering Microphone or Listen Only modes with WebRTC connectivity."
+		"** Transforms Office documents into PDFs using LibreOffice, then converts them into SVG for client display. Manages conversion progress through Redis PubSub."
+		"** Provides conversion workflow for uploaded presentations, supporting fallback mechanisms to optimize SVG load times in browsers."
+		"** Describes the various socket connections between different components of the BigBlueButton system, ensuring seamless communication and interaction."
+	}
+
