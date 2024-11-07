@@ -6,7 +6,7 @@ This repository contains the LIAD (LLM-Integrated Architectural Drift Detection)
 
 ## Projects Included
 
-This dataset consists of source code from the following versions of projects, each containing ground truth (`project_gt.json`), architecture documents (`document.txt`) and GPT-extracted module information files (`project_incompleteModules.txt` and `project_completeModules.txt`):
+This dataset consists of source code from the following versions of projects, each containing ground truth (`project_gt.json`), architecture documents (`document.txt`) and LLM-extracted module information files (`project_gpt4o_mean.txt` and `project_llama3.1_mean.txt`):
 
 - **MediaStore** - [View Version](https://github.com/ArDoCo/MediaStore3/commit/94c398fa02b3d6b8d71517522a7206d37ed3a9af)
 - **TeaStore** - [View Version](https://github.com/ArDoCo/TeaStore/commit/bdc49020a55cfa97eaabbb25744fefbc2697defa)
@@ -36,24 +36,26 @@ To use the GIAR tool to generate interpretable architecture recovery results, pl
 ### Example Command
 
 ```bash
-./run_LIAD dataset/teammates/teammates -s stopwords/stopwords.txt -g dataset/teammates/teammates_gt.json -m dataset/teammates/teammates_gpt4o_mean.txt
+./run_LIAD dataset/teammates -s stopwords/stopwords.txt -g dataset/teammates/teammates_gt.json -m dataset/teammates/teammates_gpt4o_mean.txt
 ```
 
 ## Output Results
 
 After running the tool, a `results` and a a `csv_result` folder will be generated containing the following:
 
-- **Metrics**: Evaluation metrics for architecture recovery like MojoFM, A2A, and ARI are provided in `results/metrics_our_to_GT.json`.
-- **JSON Results**: Detailed architecture recovery result in JSON format is provided in `results/cluster_result.json`.
+- **Metrics**: Evaluation metrics for architecture recovery like MojoFM, A2A, and ARI are provided in `results/{project_runtime}/metrics_our_to_GT.json`.
+- **JSON Results**: Detailed architecture recovery result in JSON format is provided in `results/{project_runtime}/cluster_result.json`.
 - **Evaluation Summary**: Evaluation metrics summary from multiple runs of architecture recovery and architecture drift detection in different drift degrees, metrics summary for architecture recovery is provided in `csv_result/{project}_combination_recovery_results.csv`, metrics summary for architectural drift is provided in `csv_result/{project}_combination_inconsistency_results.csv`.
 
 ## Compatibility
 
 Currently, the `run_LIAD` executable is only compatible with Unix-based operating systems, such as macOS and Linux. We are actively working to provide versions for Windows and other operating systems.
 
+*Note: The source code for the LIAD tool will be released upon the acceptance of our research paper.*
+
 ## Disclaimer
 
-Please note that this repository does not include the steps for generating module information based on architecture documents using GPT, nor the steps for generating interpretable module dependencies. This is because the GPT API is not free, and thus integrating it directly into the repository would involve costs. This repository focuses only on the application of the GIAR tool using pre-existing data to recover architecture with interpretable modules.
+Please note that this repository does not include the steps for generating module information based on architecture documents using GPT, nor the steps for generating interpretable module dependencies. This is because the GPT API is not free, and thus integrating it directly into the repository would involve costs. This repository focuses only on the application of the LIAD tool using pre-existing data to recover architecture with interpretable modules.
 
 ## Contribution
 
