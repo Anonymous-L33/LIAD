@@ -16,14 +16,14 @@ This dataset consists of source code from the following versions of projects, ea
 
 ## Usage
 
-To use the GIAR tool to generate interpretable architecture recovery results, please follow these steps:
+To use the LIAD tool to generate interpretable architecture recovery results, please follow these steps:
 
 1. **Download the Tool**: Download this GitHub repository to your local machine.
 
-2. **Run the Tool**: Open a terminal, navigate to the directory containing `run_GIAR`, and execute the following command:
+2. **Run the Tool**: Open a terminal, navigate to the directory containing `run_LIAD`, and execute the following command:
 
    ```bash
-   ./run_GIAR /path/to/project -s /path/to/stopwords.txt -g /path/to/project_ground_truth.json -m /path/to/project_extractedModules.txt
+   ./run_LIAD /path/to/project -s /path/to/stopwords.txt -g /path/to/project_ground_truth.json -m /path/to/project_extractedModules.txt
    ```
 
    - **`/path/to/project`**: Path to the project directory to analyze.
